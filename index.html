@@ -64,7 +64,7 @@ function startGame(){
   function checkGuess() {
     let userGuess = Number(guessField.value);
     if(userGuess != 0){
-        if(Number.isInteger(userGuess)){
+        if(Number.isInteger(userGuess) && userGuess > 0 && userGuess <=100){
             if(guessCount === 1) {
                 guesses.textContent = 'Número aleatorio anterior: ';
               }
@@ -94,7 +94,7 @@ function startGame(){
               guessField.value = '';
               guessField.focus();
         }else{
-            alert("Debe ingresar solamente valores enteros");
+            alert("Debe ingresar solamente valores enteros entre 1 y 100");
             guessField.value='';
         } 
     }else{
